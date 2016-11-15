@@ -75,6 +75,7 @@ import com.ehealth.storefront.controllers.ControllerConstants;
 import com.google.common.collect.Maps;
 
 
+//changes
 /*Nityananda Palei*/
 /*Nityananda Palei*/
 /**
@@ -263,6 +264,7 @@ public class ProductPageController extends AbstractPageController
 		return REDIRECT_PREFIX + productDataUrlResolver.resolve(productData);
 	}
 
+	//my commentes here
 	@RequestMapping(value = PRODUCT_CODE_PATH_VARIABLE_PATTERN + "/reviewhtml/"
 			+ REVIEWS_PATH_VARIABLE_PATTERN, method = RequestMethod.GET)
 	public String reviewHtml(@PathVariable("productCode") final String productCode,
