@@ -8,7 +8,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 
-<!-- This is Test Comment .......... -->
 
 <c:url value="${url}" var="addToCartUrl"/>
 <form:form method="post" id="addToCartForm" class="add_to_cart_form span-5" action="${addToCartUrl}">
