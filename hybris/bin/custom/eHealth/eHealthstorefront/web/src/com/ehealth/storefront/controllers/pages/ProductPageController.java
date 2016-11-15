@@ -75,9 +75,8 @@ import com.ehealth.storefront.controllers.ControllerConstants;
 import com.google.common.collect.Maps;
 
 
-//changes hhhhjjj
-/*Nityananda Palei*/
-/*Nityananda Palei*/
+// Edited by me.................
+
 /**
  * Controller for product details page
  */
