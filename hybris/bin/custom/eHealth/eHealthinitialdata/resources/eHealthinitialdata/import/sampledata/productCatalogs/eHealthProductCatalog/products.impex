@@ -1,0 +1,73 @@
+# ImpEx for Importing Products
+
+# Macros / Replacement Parameter definitions
+$productCatalog=eHealthProductCatalog
+$productCatalogName=eHealth Product Catalog
+
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$supercategories=supercategories(code, $catalogVersion)
+$baseProduct=baseProduct(code,$catalogVersion)
+$approved=approvalstatus(code)[default='check']
+
+#INSERT_UPDATE Product;code[unique=true];$supercategories;manufacturerName;manufacturerAID;unit(code);ean;variantType(code);$catalogVersion;$approved 
+#INSERT_UPDATE Product;code[unique=true];$supercategories;manufacturerName;manufacturerAID;unit(code);ean;$catalogVersion;$approved 
+INSERT_UPDATE Product;code[unique=true];$supercategories;manufacturerName;manufacturerAID;unit(code);ean;variantType(code);ComingSoon[default='false'];rating[default='false'];$catalogVersion;$approved 
+
+;10101;101;eHealth;eHealth;pieces;;;;;
+;10102;101;eHealth;eHealth;pieces;;;;;
+
+;10201;102;eHealth;eHealth;pieces;;;;;
+;10202;102;eHealth;eHealth;pieces;;;;;
+
+;10301;103;eHealth;eHealth;pieces;;;;;
+;10302;103;eHealth;eHealth;pieces;;;;;
+
+;20001;200;eHealth;eHealth;pieces;;;;;
+;20002;200;eHealth;eHealth;pieces;;;;;
+;20003;200;eHealth;eHealth;pieces;;;;;
+
+
+;30101;301;eHealth;eHealth;pieces;;;;;
+;30102;301;eHealth;eHealth;pieces;;;;;
+
+;30201;302;eHealth;eHealth;pieces;;;;;
+;30202;302;eHealth;eHealth;pieces;;;;;
+
+#;10103;101;eHealth;eHealth;pieces;;;;;
+#;10104;101;eHealth;eHealth;pieces;;;;;
+
+
+##comingsoon
+;111;400;eHealth;;pieces;;;true;;
+;222;400;eHealth;;pieces;;;true;;
+
+
+# CreateeHealthSizeVariantProduct variants
+#INSERT_UPDATE eHealthSizeVariantProduct;code[unique=true];$catalogVersion;$baseProduct;supercategories(code,$catalogVersion);unit(code)[default='pieces'];manufacturerName;$approved 
+#INSERT_UPDATE eHealthSizeVariantProduct;code[unique=true];$catalogVersion;$baseProduct;supercategories(code,$catalogVersion);unit(code)[default='pieces'];manufacturerName;$approved
+#;10101_M;;10101;101;;eHealth;;;
+#;10101_L;;10101;101;;eHealth;;;
+
+#;10102_M;;10102;101;;eHealth;;;
+#;10102_L;;10102;101;;eHealth;;;
+
+#;10201_M;;10201;102;;eHealth;;;
+#;10201_L;;10201;102;;eHealth;;;
+
+#;10202_M;;10202;102;;eHealth;;;
+#;10202_L;;10202;102;;eHealth;;;
+
+#;10301_M;;10301;103;;eHealth;
+#;10301_L;;10301;103;;eHealth;
+
+#;10302_M;;10302;103;;eHealth;
+#;10302_L;;10302;103;;eHealth;
+
+
+
+
+#;30201_M;;30201;302;;eHealth;
+#;30201_L;;30201;302;;eHealth;
+
+#;30202_M;;30201;302;;eHealth;
+#;30202_L;;30201;302;;eHealth;
