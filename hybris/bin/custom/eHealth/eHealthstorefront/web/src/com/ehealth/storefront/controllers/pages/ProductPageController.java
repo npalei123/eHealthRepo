@@ -75,6 +75,7 @@ import com.ehealth.storefront.controllers.ControllerConstants;
 import com.google.common.collect.Maps;
 
 
+/*Nityananda Palei*/
 /**
  * Controller for product details page
  */
@@ -125,7 +126,7 @@ public class ProductPageController extends AbstractPageController
 	@RequestMapping(value = PRODUCT_CODE_PATH_VARIABLE_PATTERN, method = RequestMethod.GET)
 	public String productDetail(@PathVariable("productCode") final String productCode, final Model model,
 			final HttpServletRequest request, final HttpServletResponse response)
-					throws CMSItemNotFoundException, UnsupportedEncodingException
+			throws CMSItemNotFoundException, UnsupportedEncodingException
 	{
 		//addon
 		final ProductModel productModel = productService.getProductForCode(productCode);
@@ -235,7 +236,7 @@ public class ProductPageController extends AbstractPageController
 	{ RequestMethod.GET, RequestMethod.POST })
 	public String postReview(@PathVariable final String productCode, final ReviewForm form, final BindingResult result,
 			final Model model, final HttpServletRequest request, final RedirectAttributes redirectAttrs)
-					throws CMSItemNotFoundException
+			throws CMSItemNotFoundException
 	{
 		getReviewValidator().validate(form, result);
 
@@ -312,7 +313,7 @@ public class ProductPageController extends AbstractPageController
 	@RequestMapping(value = PRODUCT_CODE_PATH_VARIABLE_PATTERN + "/writeReview", method = RequestMethod.POST)
 	public String writeReview(@PathVariable final String productCode, final ReviewForm form, final BindingResult result,
 			final Model model, final HttpServletRequest request, final RedirectAttributes redirectAttrs)
-					throws CMSItemNotFoundException
+			throws CMSItemNotFoundException
 	{
 		getReviewValidator().validate(form, result);
 
